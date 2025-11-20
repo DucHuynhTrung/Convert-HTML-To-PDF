@@ -21,6 +21,8 @@ from pdfrw import PdfReader, PdfWriter, PageMerge
 A4_WIDTH_PT, A4_HEIGHT_PT = A4  # (~595.27, 841.89)
 CSS_PX_TO_PT = 72.0 / 96.0     # CSS px -> PDF points (0.75)
 
+html_path : str = 'D:\MyFolder\Sources\huynhtrungducgrowth\gitlab\"Convert HTML To PDF"\access\file_example\"Enterprise Agreement".html'
+out_pdf : str = 'D:\MyFolder\Sources\huynhtrungducgrowth\gitlab\"Convert HTML To PDF"\access\result_pdf'
 
 async def render_html_to_pdf(html_path: str, out_pdf: str):
     async with async_playwright() as p:
@@ -109,7 +111,8 @@ def merge_pdfs(base_pdf_path: str, overlay_pdf_path: str, final_out_path: str):
     PdfWriter().write(final_out_path, base)
 
 
-async def run(html_path: str, out_dir: str):
+# async def run(html_path: str, out_dir: str):
+async def run():
     os.makedirs(out_dir, exist_ok=True)
     base_pdf = os.path.join(out_dir, "base_render.pdf")
     overlay_pdf = os.path.join(out_dir, "overlay.pdf")
@@ -140,6 +143,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage: python run.py path/to/file.html")
         sys.exit(1)
-    html_file = sys.argv[1]
-    out = "output"
-    asyncio.run(run(html_file, out))
+    # html_file = sys.argv[1]
+    # out = "output"
+    # asyncio.run(run(html_file, out))
+    asyncio.run(run())
