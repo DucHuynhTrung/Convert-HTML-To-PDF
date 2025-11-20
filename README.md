@@ -1,12 +1,8 @@
 # Convert HTML To PDF
 
-
-
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Chuyển đổi file HTML sang PDF mà vẫn giữ được giống với 90-95% như trên HTML, file HTML chủ yếu sẽ là form nhập liệu nên PDF khi tạo ra vẫn sẽ có các ô nhập liệu như vậy luôn. Có đầy đủ các TextBox, CheckBox, ComboBox,....
 
 ## Add your files
 

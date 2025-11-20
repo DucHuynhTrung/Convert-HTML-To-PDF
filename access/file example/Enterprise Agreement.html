@@ -1,0 +1,1379 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enterprise Agreement — Template — Atlas Market Intelligence, Inc.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{
+      --slate:#3a4a63; --slate-text:#fff; --slate-sub:#cfd4da;
+      --ink:#222; --muted:#666; --rule:#d9d9d9; --page:#fff; --accent:#0f6fff;
+      --good:#0a7f2e; --warn:#b26a00; --bad:#a31212;
+      --page-margin:1in;
+    }
+    html,body{height:100%}
+    body{
+      margin:var(--page-margin);
+      background:#f6f8fb;
+      color:var(--ink);
+      font:14px/1.55 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    h1,h2,h3{margin:0 0 .5rem 0; color:#111; line-height:1.22}
+    h1{font-size:26px}
+    h2{font-size:18px; margin-top:1rem}
+    h3{font-size:15px; margin-top:.6rem}
+    p{margin:.35rem 0 .75rem}
+    .muted{color:var(--muted)}
+
+    .header{
+      background:var(--slate);
+      color:var(--slate-text);
+      padding:18px 22px;
+      border-radius:14px;
+      margin-bottom:18px
+    }
+    .header .title{
+      font-size:22px;
+      font-weight:700;
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      gap:8px;
+    }
+    .header .subtitle{color:var(--slate-sub); font-size:13px; margin-top:4px}
+
+    .doc{
+      background:var(--page);
+      border:1px solid var(--rule);
+      border-radius:14px;
+      padding:22px
+    }
+
+    /* Key facts */
+    .facts{
+      display:grid;
+      gap:8px 16px;
+      grid-template-columns:repeat(4,1fr);
+      background:#f7f9fc;
+      border:1px solid var(--rule);
+      border-radius:12px;
+      padding:12px 14px;
+      margin:12px 0 18px;
+      font-size:13px
+    }
+    .facts .k{color:var(--muted); font-weight:600; font-size:12px}
+    .facts .v{font-weight:600}
+
+    /* Tables */
+    table{width:100%; border-collapse:collapse; margin:.3in 0 .2in}
+    th,td{border:1px solid var(--rule); padding:10px; vertical-align:top}
+    th{background:#fbfcfe; text-align:left; font-size:13px}
+    td{font-size:13px}
+    .right{text-align:right}
+    .center{text-align:center}
+    .nowrap{white-space:nowrap}
+
+    /* Bands */
+    .band{border:1px solid var(--rule); border-radius:12px; padding:12px; background:#fff}
+
+    /* Form-style fields */
+    input.inline-input{
+      border:none;
+      border-bottom:1px solid #ddd;
+      background:transparent;
+      font:inherit;
+      color:inherit;
+      padding:0 0 2px;
+      min-width:140px;
+      box-sizing:border-box;
+    }
+    input.inline-input.sm{min-width:90px}
+    input.inline-input.lg{min-width:260px}
+    input.inline-input.num{
+      text-align:right;
+      min-width:80px;
+    }
+    select.inline-select{
+      font:inherit;
+      color:inherit;
+      border:1px solid #bbb;
+      border-radius:4px;
+      padding:2px 4px;
+      background:#fff;
+    }
+    select.inline-select.sm{min-width:140px}
+    textarea.field-input{
+      width:100%;
+      box-sizing:border-box;
+      font:inherit;
+      color:inherit;
+      border:1px solid #bbb;
+      border-radius:4px;
+      padding:6px 8px;
+      resize:vertical;
+      min-height:48px;
+    }
+    .data-res label.cb{
+      font-weight:600;
+      margin-right:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+    }
+    .data-res input[type="checkbox"]{
+      width:14px;
+      height:14px;
+    }
+
+    /* Grids */
+    .grid-2{display:grid; gap:16px; grid-template-columns:1fr 1fr}
+    .grid-3{display:grid; gap:16px; grid-template-columns:1fr 1fr 1fr}
+
+    /* Signature */
+    .sign-grid{display:grid; gap:16px; grid-template-columns:1fr 1fr; margin-top:8px}
+    .sign-card{border:1px solid var(--rule); border-radius:12px; padding:14px; background:#fff}
+    .sig-line{border-bottom:1px solid #999; height:28px; margin:14px 0 6px}
+    .sig-meta{font-size:12px; color:#444; margin-top:4px}
+    .sig-meta input.inline-input{font-size:12px; min-width:120px}
+
+    /* Buttons */
+    .pill-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:4px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid var(--rule);
+      background:#f7f9fc;
+      font-size:11px;
+      cursor:pointer;
+      margin:4px 0;
+    }
+    .pill-btn:hover{background:#eef2fb}
+
+    @media print{
+      :root{--page-margin:.75in}
+      body{background:#fff}
+      a[href]:after{content:""}
+      .facts{grid-template-columns:repeat(4,1fr)}
+      .grid-2,.sign-grid{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:1fr 1fr 1fr}
+      select.inline-select,
+      textarea.field-input{
+        border:1px solid #888;
+      }
+      .pill-btn{display:none}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="title">
+      <span>Agreement File ID:</span>
+      <input
+        type="text"
+        class="inline-input lg"
+        placeholder="e.g., C005_ClientName_Enterprise_Agreement"
+      />
+    </div>
+    <div class="subtitle">
+      Phase ☐ — Deployment Stage • Enterprise Agreement (EA) — Atlas Market Intelligence, Inc.
+    </div>
+  </div>
+
+  <div class="doc">
+    <h1>Enterprise Agreement</h1>
+
+    <div class="facts">
+      <div>
+        <div class="k">Client_ID</div>
+        <div class="v">
+          <input
+            type="text"
+            class="inline-input lg"
+            placeholder="e.g., C005_ClientName"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="k">Client Legal Name</div>
+        <div class="v">
+          <input
+            type="text"
+            class="inline-input lg"
+            placeholder="Full legal entity name"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="k">EA Effective Date</div>
+        <div class="v">
+          <input type="date" class="inline-input sm" />
+        </div>
+      </div>
+      <div>
+        <div class="k">EA Term</div>
+        <div class="v">
+          <input
+            type="text"
+            class="inline-input sm"
+            placeholder="e.g., 36 months (Annual prepaid)"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="k">Total Seats (Firmwide)</div>
+        <div class="v">
+          <input type="number" class="inline-input num" placeholder="e.g., 300" min="0" />
+        </div>
+      </div>
+      <div>
+        <div class="k">Data Residency</div>
+        <div class="v data-res">
+          <label class="cb"><input type="checkbox" /> EU</label>
+          <label class="cb"><input type="checkbox" /> US</label>
+          <label class="cb"><input type="checkbox" /> Hybrid (per-user pin)</label>
+        </div>
+      </div>
+      <div>
+        <div class="k">Invoice Terms</div>
+        <div class="v">
+          <input
+            type="text"
+            class="inline-input lg"
+            placeholder="e.g., Annual in advance • Net 30"
+          />
+        </div>
+      </div>
+      <div>
+        <div class="k">Governing Law</div>
+        <div class="v">
+          <select class="inline-select sm">
+            <option value="">Select…</option>
+            <option value="ny">New York, USA</option>
+            <option value="ew">England &amp; Wales</option>
+            <option value="nl">Netherlands</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <h2>1) Parties</h2>
+    <table>
+      <tbody>
+        <tr>
+          <th style="width:30%">Provider</th>
+          <td>
+            <strong>Atlas Market Intelligence, Inc.</strong>,
+            3500 Las Vegas Blvd S #501, Las Vegas, NV 89109 USA
+          </td>
+        </tr>
+        <tr>
+          <th>Client</th>
+          <td>
+            <strong>
+              <input
+                type="text"
+                class="inline-input lg"
+                placeholder="Client Legal Name"
+              />
+            </strong>,
+            <input
+              type="text"
+              class="inline-input lg"
+              placeholder="Client registered address"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>Notices (Provider)</th>
+          <td>legal@atlasmarketintelligence.com</td>
+        </tr>
+        <tr>
+          <th>Notices (Client)</th>
+          <td>
+            <textarea
+              class="field-input"
+              placeholder="Client notice address, email, and contact details"
+            ></textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>2) Order of Precedence</h2>
+    <p>
+      In case of conflict: (i) this Enterprise Agreement and applicable Order Forms, then
+      (ii) Pricing Schedule, (iii) MSA and DPA, (iv) Documentation.
+    </p>
+
+    <!-- ========================= -->
+    <!-- 3) FIRM-WIDE LICENSE & SCOPE -->
+    <!-- ========================= -->
+
+    <h2>3) Firmwide License &amp; Scope</h2>
+    <button type="button" class="pill-btn" id="add-sku-row">+ Add SKU Row</button>
+
+    <table id="sku-table">
+      <thead>
+        <tr>
+          <th>SKU</th>
+          <th>Description</th>
+          <th class="center">Qty</th>
+          <th class="right">Unit (USD)</th>
+          <th class="center">Disc.</th>
+          <th class="right">Annual (USD)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+
+      <tbody id="sku-body">
+
+        <!-- ROW 1 -->
+        <tr class="sku-row">
+          <td>
+            <select class="inline-select sku-select">
+              <option value="ST-CORE-ENT" selected>ST-CORE-ENT</option>
+              <option value="ST-CORE-PRO">ST-CORE-PRO</option>
+              <option value="ST-CORE-LITE">ST-CORE-LITE</option>
+              <option value="ST-DATA-TRADFI">ST-DATA-TRADFI</option>
+              <option value="ST-DATA-DEFI">ST-DATA-DEFI</option>
+              <option value="ST-COMPLY-PACK">ST-COMPLY-PACK</option>
+              <option value="ST-SUPPORT-ENT">ST-SUPPORT-ENT</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td><input type="text" class="inline-input sku-desc lg" value="Core Seat — Enterprise Tier"></td>
+          <td class="center"><input type="number" class="inline-input num qty-input" value="300" min="0"></td>
+          <td class="right"><input type="number" class="inline-input num sku-unit" value="10080.00" step="0.01"></td>
+          <td class="center"><input type="text" class="inline-input sm disc-input" value="-15%"></td>
+          <td class="right"><input type="number" class="inline-input num annual-input" value="2572800.00" step="0.01"></td>
+          <td><input type="text" class="inline-input sku-notes lg" value="EA pricing band"></td>
+        </tr>
+
+        <!-- ROW 2 -->
+        <tr class="sku-row">
+          <td>
+            <select class="inline-select sku-select">
+              <option value="ST-DATA-TRADFI" selected>ST-DATA-TRADFI</option>
+              <option value="ST-DATA-DEFI">ST-DATA-DEFI</option>
+              <option value="ST-CORE-ENT">ST-CORE-ENT</option>
+              <option value="ST-COMPLY-PACK">ST-COMPLY-PACK</option>
+              <option value="ST-SUPPORT-ENT">ST-SUPPORT-ENT</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td><input type="text" class="inline-input sku-desc lg" value="TradFi Deep Feeds (Tenant)"></td>
+          <td class="center"><input type="number" class="inline-input num qty-input" value="1" min="0"></td>
+          <td class="right"><input type="number" class="inline-input num sku-unit" value="450000.00" step="0.01"></td>
+          <td class="center"><input type="text" class="inline-input sm disc-input" value="-0%"></td>
+          <td class="right"><input type="number" class="inline-input num annual-input" value="450000.00" step="0.01"></td>
+          <td><input type="text" class="inline-input sku-notes lg" value="Research-grade FI/Index"></td>
+        </tr>
+
+        <!-- ROW 3 -->
+        <tr class="sku-row">
+          <td>
+            <select class="inline-select sku-select">
+              <option value="ST-COMPLY-PACK" selected>ST-COMPLY-PACK</option>
+              <option value="ST-DATA-TRADFI">ST-DATA-TRADFI</option>
+              <option value="ST-DATA-DEFI">ST-DATA-DEFI</option>
+              <option value="ST-CORE-ENT">ST-CORE-ENT</option>
+              <option value="ST-SUPPORT-ENT">ST-SUPPORT-ENT</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td><input type="text" class="inline-input sku-desc lg" value="Compliance &amp; Audit Pack"></td>
+          <td class="center"><input type="number" class="inline-input num qty-input" value="1" min="0"></td>
+          <td class="right"><input type="number" class="inline-input num sku-unit" value="60000.00" step="0.01"></td>
+          <td class="center"><input type="text" class="inline-input sm disc-input" value="-0%"></td>
+          <td class="right"><input type="number" class="inline-input num annual-input" value="60000.00" step="0.01"></td>
+          <td><input type="text" class="inline-input sku-notes lg" value="Evidence exports, audit automations"></td>
+        </tr>
+
+        <!-- ROW 4 -->
+        <tr class="sku-row">
+          <td>
+            <select class="inline-select sku-select">
+              <option value="ST-SUPPORT-ENT" selected>ST-SUPPORT-ENT</option>
+              <option value="ST-CORE-ENT">ST-CORE-ENT</option>
+              <option value="ST-COMPLY-PACK">ST-COMPLY-PACK</option>
+              <option value="ST-DATA-TRADFI">ST-DATA-TRADFI</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td><input type="text" class="inline-input sku-desc lg" value="Enterprise Support (24×7)"></td>
+          <td class="center"><input type="number" class="inline-input num qty-input" value="1" min="0"></td>
+          <td class="right"><input type="number" class="inline-input num sku-unit" value="80000.00" step="0.01"></td>
+          <td class="center"><input type="text" class="inline-input sm disc-input" value="-0%"></td>
+          <td class="right"><input type="number" class="inline-input num annual-input" value="80000.00" step="0.01"></td>
+          <td><input type="text" class="inline-input sku-notes lg" value="TAM + expedited SLAs"></td>
+        </tr>
+
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th colspan="5" class="right">Annual Total (Excl. Taxes)</th>
+          <th class="right">
+            <input type="number" class="inline-input num" id="sku-total" value="3162800.00" step="0.01">
+          </th>
+          <th>
+            <input type="text" class="inline-input lg" placeholder="Notes / FX / multi-year adjustments">
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- ========================= -->
+    <!-- 4) SEAT DISTRIBUTION & ACCESS CONTROLS -->
+    <!-- ========================= -->
+
+    <h2>4) Seat Distribution &amp; Access Controls</h2>
+    <button type="button" class="pill-btn" id="add-group-row">+ Add Group Row</button>
+
+    <div class="band">
+      <p>
+        Seats allocated via SCIM groups; reassignment permitted for attrition/role change.
+        Least-privilege access enforced. Admins limited to named personnel.
+      </p>
+      <table id="group-table">
+        <thead>
+          <tr><th>Group</th><th>Seats</th><th>Scopes</th><th>Notes</th></tr>
+        </thead>
+        <tbody id="group-body">
+          <!-- Row 1 -->
+          <tr class="group-row">
+            <td>
+              <select class="inline-select sm group-select">
+                <optgroup label="Trading Desks">
+                  <option value="TRADING_FIRM" selected>TRADING_FIRM</option>
+                  <option value="TRADING_FX">TRADING_FX</option>
+                  <option value="TRADING_EQUITIES">TRADING_EQUITIES</option>
+                  <option value="TRADING_FIXED_INCOME">TRADING_FIXED_INCOME</option>
+                  <option value="TRADING_CRYPTO">TRADING_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Research &amp; Analysis">
+                  <option value="RESEARCH_FIRM">RESEARCH_FIRM</option>
+                  <option value="RESEARCH_MACRO">RESEARCH_MACRO</option>
+                  <option value="RESEARCH_EQUITIES">RESEARCH_EQUITIES</option>
+                  <option value="RESEARCH_CRYPTO">RESEARCH_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Risk &amp; Compliance">
+                  <option value="RISK_COMPLIANCE">RISK_COMPLIANCE</option>
+                  <option value="RISK_MARKET">RISK_MARKET</option>
+                  <option value="RISK_CREDIT">RISK_CREDIT</option>
+                  <option value="AML_COMPLIANCE">AML_COMPLIANCE</option>
+                  <option value="REGULATORY_REPORTING">REGULATORY_REPORTING</option>
+                </optgroup>
+                <optgroup label="Operations &amp; Finance">
+                  <option value="OPS_SETTLEMENTS">OPS_SETTLEMENTS</option>
+                  <option value="OPS_MIDDLE_OFFICE">OPS_MIDDLE_OFFICE</option>
+                  <option value="FINANCE_TEAM">FINANCE_TEAM</option>
+                  <option value="ACCOUNTING_TEAM">ACCOUNTING_TEAM</option>
+                </optgroup>
+                <optgroup label="Management / Executive">
+                  <option value="EXEC_TEAM">EXEC_TEAM</option>
+                  <option value="PORTFOLIO_MANAGERS">PORTFOLIO_MANAGERS</option>
+                  <option value="DIRECTORS">DIRECTORS</option>
+                </optgroup>
+                <optgroup label="Specialized">
+                  <option value="DATA_ENGINEERING">DATA_ENGINEERING</option>
+                  <option value="QUANT_DESK">QUANT_DESK</option>
+                  <option value="TECH_SECURITY">TECH_SECURITY</option>
+                </optgroup>
+                <optgroup label="Custom">
+                  <option value="OTHER_DESKS">OTHER_DESKS</option>
+                  <option value="CUSTOM_GROUP">CUSTOM_GROUP</option>
+                </optgroup>
+              </select>
+            </td>
+            <td><input type="number" class="inline-input num seats-input" value="120" min="0"></td>
+            <td><input type="text" class="inline-input lg scope-input" value="Core + DeFi lenses"></td>
+            <td><input type="text" class="inline-input lg group-notes" value="Daily dashboards, exports"></td>
+          </tr>
+
+          <!-- Row 2 -->
+          <tr class="group-row">
+            <td>
+              <select class="inline-select sm group-select">
+                <optgroup label="Trading Desks">
+                  <option value="TRADING_FIRM">TRADING_FIRM</option>
+                  <option value="TRADING_FX">TRADING_FX</option>
+                  <option value="TRADING_EQUITIES">TRADING_EQUITIES</option>
+                  <option value="TRADING_FIXED_INCOME">TRADING_FIXED_INCOME</option>
+                  <option value="TRADING_CRYPTO">TRADING_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Research &amp; Analysis">
+                  <option value="RESEARCH_FIRM" selected>RESEARCH_FIRM</option>
+                  <option value="RESEARCH_MACRO">RESEARCH_MACRO</option>
+                  <option value="RESEARCH_EQUITIES">RESEARCH_EQUITIES</option>
+                  <option value="RESEARCH_CRYPTO">RESEARCH_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Risk &amp; Compliance">
+                  <option value="RISK_COMPLIANCE">RISK_COMPLIANCE</option>
+                  <option value="RISK_MARKET">RISK_MARKET</option>
+                  <option value="RISK_CREDIT">RISK_CREDIT</option>
+                  <option value="AML_COMPLIANCE">AML_COMPLIANCE</option>
+                  <option value="REGULATORY_REPORTING">REGULATORY_REPORTING</option>
+                </optgroup>
+                <optgroup label="Operations &amp; Finance">
+                  <option value="OPS_SETTLEMENTS">OPS_SETTLEMENTS</option>
+                  <option value="OPS_MIDDLE_OFFICE">OPS_MIDDLE_OFFICE</option>
+                  <option value="FINANCE_TEAM">FINANCE_TEAM</option>
+                  <option value="ACCOUNTING_TEAM">ACCOUNTING_TEAM</option>
+                </optgroup>
+                <optgroup label="Management / Executive">
+                  <option value="EXEC_TEAM">EXEC_TEAM</option>
+                  <option value="PORTFOLIO_MANAGERS">PORTFOLIO_MANAGERS</option>
+                  <option value="DIRECTORS">DIRECTORS</option>
+                </optgroup>
+                <optgroup label="Specialized">
+                  <option value="DATA_ENGINEERING">DATA_ENGINEERING</option>
+                  <option value="QUANT_DESK">QUANT_DESK</option>
+                  <option value="TECH_SECURITY">TECH_SECURITY</option>
+                </optgroup>
+                <optgroup label="Custom">
+                  <option value="OTHER_DESKS">OTHER_DESKS</option>
+                  <option value="CUSTOM_GROUP">CUSTOM_GROUP</option>
+                </optgroup>
+              </select>
+            </td>
+            <td><input type="number" class="inline-input num seats-input" value="100" min="0"></td>
+            <td><input type="text" class="inline-input lg scope-input" value="Core + TradFi feeds"></td>
+            <td><input type="text" class="inline-input lg group-notes" value="Notebooks &amp; screeners"></td>
+          </tr>
+
+          <!-- Row 3 -->
+          <tr class="group-row">
+            <td>
+              <select class="inline-select sm group-select">
+                <optgroup label="Trading Desks">
+                  <option value="TRADING_FIRM">TRADING_FIRM</option>
+                  <option value="TRADING_FX">TRADING_FX</option>
+                  <option value="TRADING_EQUITIES">TRADING_EQUITIES</option>
+                  <option value="TRADING_FIXED_INCOME">TRADING_FIXED_INCOME</option>
+                  <option value="TRADING_CRYPTO">TRADING_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Research &amp; Analysis">
+                  <option value="RESEARCH_FIRM">RESEARCH_FIRM</option>
+                  <option value="RESEARCH_MACRO">RESEARCH_MACRO</option>
+                  <option value="RESEARCH_EQUITIES">RESEARCH_EQUITIES</option>
+                  <option value="RESEARCH_CRYPTO">RESEARCH_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Risk &amp; Compliance">
+                  <option value="RISK_COMPLIANCE" selected>RISK_COMPLIANCE</option>
+                  <option value="RISK_MARKET">RISK_MARKET</option>
+                  <option value="RISK_CREDIT">RISK_CREDIT</option>
+                  <option value="AML_COMPLIANCE">AML_COMPLIANCE</option>
+                  <option value="REGULATORY_REPORTING">REGULATORY_REPORTING</option>
+                </optgroup>
+                <optgroup label="Operations &amp; Finance">
+                  <option value="OPS_SETTLEMENTS">OPS_SETTLEMENTS</option>
+                  <option value="OPS_MIDDLE_OFFICE">OPS_MIDDLE_OFFICE</option>
+                  <option value="FINANCE_TEAM">FINANCE_TEAM</option>
+                  <option value="ACCOUNTING_TEAM">ACCOUNTING_TEAM</option>
+                </optgroup>
+                <optgroup label="Management / Executive">
+                  <option value="EXEC_TEAM">EXEC_TEAM</option>
+                  <option value="PORTFOLIO_MANAGERS">PORTFOLIO_MANAGERS</option>
+                  <option value="DIRECTORS">DIRECTORS</option>
+                </optgroup>
+                <optgroup label="Specialized">
+                  <option value="DATA_ENGINEERING">DATA_ENGINEERING</option>
+                  <option value="QUANT_DESK">QUANT_DESK</option>
+                  <option value="TECH_SECURITY">TECH_SECURITY</option>
+                </optgroup>
+                <optgroup label="Custom">
+                  <option value="OTHER_DESKS">OTHER_DESKS</option>
+                  <option value="CUSTOM_GROUP">CUSTOM_GROUP</option>
+                </optgroup>
+              </select>
+            </td>
+            <td><input type="number" class="inline-input num seats-input" value="40" min="0"></td>
+            <td><input type="text" class="inline-input lg scope-input" value="Compliance pack"></td>
+            <td><input type="text" class="inline-input lg group-notes" value="Audit &amp; evidence exports"></td>
+          </tr>
+
+          <!-- Row 4 -->
+          <tr class="group-row">
+            <td>
+              <select class="inline-select sm group-select">
+                <optgroup label="Trading Desks">
+                  <option value="TRADING_FIRM">TRADING_FIRM</option>
+                  <option value="TRADING_FX">TRADING_FX</option>
+                  <option value="TRADING_EQUITIES">TRADING_EQUITIES</option>
+                  <option value="TRADING_FIXED_INCOME">TRADING_FIXED_INCOME</option>
+                  <option value="TRADING_CRYPTO">TRADING_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Research &amp; Analysis">
+                  <option value="RESEARCH_FIRM">RESEARCH_FIRM</option>
+                  <option value="RESEARCH_MACRO">RESEARCH_MACRO</option>
+                  <option value="RESEARCH_EQUITIES">RESEARCH_EQUITIES</option>
+                  <option value="RESEARCH_CRYPTO">RESEARCH_CRYPTO</option>
+                </optgroup>
+                <optgroup label="Risk &amp; Compliance">
+                  <option value="RISK_COMPLIANCE">RISK_COMPLIANCE</option>
+                  <option value="RISK_MARKET">RISK_MARKET</option>
+                  <option value="RISK_CREDIT">RISK_CREDIT</option>
+                  <option value="AML_COMPLIANCE">AML_COMPLIANCE</option>
+                  <option value="REGULATORY_REPORTING">REGULATORY_REPORTING</option>
+                </optgroup>
+                <optgroup label="Operations &amp; Finance">
+                  <option value="OPS_SETTLEMENTS">OPS_SETTLEMENTS</option>
+                  <option value="OPS_MIDDLE_OFFICE">OPS_MIDDLE_OFFICE</option>
+                  <option value="FINANCE_TEAM">FINANCE_TEAM</option>
+                  <option value="ACCOUNTING_TEAM">ACCOUNTING_TEAM</option>
+                </optgroup>
+                <optgroup label="Management / Executive">
+                  <option value="EXEC_TEAM">EXEC_TEAM</option>
+                  <option value="PORTFOLIO_MANAGERS">PORTFOLIO_MANAGERS</option>
+                  <option value="DIRECTORS">DIRECTORS</option>
+                </optgroup>
+                <optgroup label="Specialized">
+                  <option value="DATA_ENGINEERING">DATA_ENGINEERING</option>
+                  <option value="QUANT_DESK">QUANT_DESK</option>
+                  <option value="TECH_SECURITY">TECH_SECURITY</option>
+                </optgroup>
+                <optgroup label="Custom">
+                  <option value="OTHER_DESKS" selected>OTHER_DESKS</option>
+                  <option value="CUSTOM_GROUP">CUSTOM_GROUP</option>
+                </optgroup>
+              </select>
+            </td>
+            <td><input type="number" class="inline-input num seats-input" value="40" min="0"></td>
+            <td><input type="text" class="inline-input lg scope-input" value="Core"></td>
+            <td><input type="text" class="inline-input lg group-notes" value="Finance, Ops, Exec"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 5) SLA -->
+
+    <h2>5) Service Levels (SLA)</h2>
+    <table>
+      <thead>
+        <tr><th>Metric</th><th>Target</th><th>Credit Schedule / Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <select class="inline-select sm">
+              <option>Availability</option>
+              <option>P1 Response</option>
+              <option>P2 Response</option>
+              <option>RTO / RPO</option>
+              <option>Custom metric…</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="inline-input lg" value="99.9% monthly" />
+          </td>
+          <td>
+            <textarea class="field-input" style="min-height:34px;">Per SLA Exhibit A</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="inline-select sm">
+              <option>P1 Response</option>
+              <option>Availability</option>
+              <option>P2 Response</option>
+              <option>RTO / RPO</option>
+              <option>Custom metric…</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="inline-input lg" value="≤ 15 minutes (24×7)" />
+          </td>
+          <td>
+            <textarea class="field-input" style="min-height:34px;">Escalation to on-call + TAM</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="inline-select sm">
+              <option>P2 Response</option>
+              <option>Availability</option>
+              <option>P1 Response</option>
+              <option>RTO / RPO</option>
+              <option>Custom metric…</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="inline-input lg" value="≤ 4 hours (24×5)" />
+          </td>
+          <td>
+            <textarea class="field-input" style="min-height:34px;">Credit if breached</textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <select class="inline-select sm">
+              <option>RTO / RPO</option>
+              <option>Availability</option>
+              <option>P1 Response</option>
+              <option>P2 Response</option>
+              <option>Custom metric…</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="inline-input lg" value="RTO 4h / RPO 15m" />
+          </td>
+          <td>
+            <textarea class="field-input" style="min-height:34px;">BC/DR testing annual</textarea>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 7) PROFESSIONAL SERVICES (INTERACTIVE) -->
+
+    <h2>7) Professional Services (Optional)</h2>
+    <button type="button" class="pill-btn" id="add-ps-row">+ Add Service Row</button>
+
+    <table id="ps-table">
+      <thead>
+        <tr>
+          <th>Service</th>
+          <th>SKU</th>
+          <th>Rate / Fixed</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody id="ps-body">
+        <!-- PS Row 1 -->
+        <tr class="ps-row">
+          <td>
+            <input type="text" class="inline-input lg ps-service" value="Advanced Enablement (4 sessions)">
+          </td>
+          <td>
+            <select class="inline-select sm ps-sku-select">
+              <option value="ST-PS-ENABLE-ADV" selected>ST-PS-ENABLE-ADV</option>
+              <option value="ST-PS-ENABLE-CORE">ST-PS-ENABLE-CORE</option>
+              <option value="ST-PS-SOW">ST-PS-SOW</option>
+              <option value="ST-PS-TRAINING">ST-PS-TRAINING</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td>
+            <select class="inline-select sm ps-rate-type">
+              <option value="fixed" selected>Fixed</option>
+              <option value="hourly">Hourly</option>
+              <option value="daily">Daily</option>
+            </select>
+            <input type="number" class="inline-input num ps-rate-amount" value="12000.00" step="0.01">
+          </td>
+          <td>
+            <input type="text" class="inline-input lg ps-notes" value="Trading + Research labs">
+          </td>
+        </tr>
+
+        <!-- PS Row 2 -->
+        <tr class="ps-row">
+          <td>
+            <input type="text" class="inline-input lg ps-service" value="Custom Integrations (per SOW)">
+          </td>
+          <td>
+            <select class="inline-select sm ps-sku-select">
+              <option value="ST-PS-SOW" selected>ST-PS-SOW</option>
+              <option value="ST-PS-ENABLE-ADV">ST-PS-ENABLE-ADV</option>
+              <option value="ST-PS-ENABLE-CORE">ST-PS-ENABLE-CORE</option>
+              <option value="ST-PS-TRAINING">ST-PS-TRAINING</option>
+              <option value="CUSTOM">Custom…</option>
+            </select>
+          </td>
+          <td>
+            <select class="inline-select sm ps-rate-type">
+              <option value="fixed">Fixed</option>
+              <option value="hourly" selected>Hourly</option>
+              <option value="daily">Daily</option>
+            </select>
+            <input type="number" class="inline-input num ps-rate-amount" value="250.00" step="0.01">
+          </td>
+          <td>
+            <input type="text" class="inline-input lg ps-notes" value="Change control required">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>8) Financial Terms</h2>
+    <table>
+      <tbody>
+        <tr><th style="width:35%">Billing &amp; Taxes</th><td>Annual in advance; taxes (VAT/GST/withholding) borne by Client unless valid exemption provided.</td></tr>
+        <tr><th>Uplift Cap</th><td>≤ 4% per year during EA term for like-for-like scope.</td></tr>
+        <tr><th>True-Up / Flex</th><td>±10% seat flex allowed; netted at anniversary true-up.</td></tr>
+        <tr><th>Refunds</th><td>Non-cancellable, non-refundable except as stated in SLA credits or material breach uncured within cure period.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>9) Intellectual Property &amp; Use</h2>
+    <ul style="margin:.25rem 0 .2rem 1.1rem;">
+      <li>Provider retains IP in platform and derivatives; Client retains IP in its data.</li>
+      <li>No benchmarking publication without prior written consent.</li>
+      <li>Usage subject to fair access: no scraping, sharing of credentials, or circumvention of technical controls.</li>
+    </ul>
+
+    <h2>10) Warranties, Indemnities, Liability</h2>
+    <table>
+      <tbody>
+        <tr><th style="width:35%">Warranties</th><td>Platform will materially conform to documentation; professional services performed in a workmanlike manner.</td></tr>
+        <tr><th>Indemnities</th><td>IP infringement by Provider materials; Client data/usage indemnity by Client.</td></tr>
+        <tr><th>Liability Cap</th><td>12 months’ fees paid/owing under current Order Form; excludes fraud, bodily injury, wilful misconduct, and IP indemnity obligations.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>11) Suspension &amp; Termination</h2>
+    <ul style="margin:.25rem 0 .2rem 1.1rem;">
+      <li>Either party may terminate for material breach not cured within 30 days’ written notice.</li>
+      <li>Provider may suspend for non-payment after 15 days past due; prior notice required.</li>
+      <li>Upon termination/expiry, Client may export data for 30 days; secure deletion thereafter.</li>
+    </ul>
+
+    <h2>12) Export, Anti-Corruption, Sanctions</h2>
+    <p>
+      Each party complies with applicable export control, anti-bribery, and sanctions laws (including U.S. OFAC,
+      UK, and EU regimes). No access from embargoed regions without approval.
+    </p>
+
+    <h2>13) Insurance</h2>
+    <p>
+      Provider maintains commercially reasonable insurance, including Tech E&amp;O/Cyber, not less than
+      <strong>USD 5,000,000</strong> aggregate. Certificates available upon request.
+    </p>
+
+    <h2>14) Notices &amp; Contacts</h2>
+    <div class="grid-2">
+      <div class="band">
+        <h3>Provider — Atlas Market Intelligence, Inc.</h3>
+        <p>Attn: Legal</p>
+        <p>3500 Las Vegas Blvd S #501, Las Vegas, NV 89109 USA</p>
+        <p>legal@atlasmarketintelligence.com</p>
+      </div>
+      <div class="band">
+        <h3>Client —</h3>
+        <p>Attn:
+          <input type="text" class="inline-input lg" placeholder="Contact name / department" />
+        </p>
+        <p>
+          <input type="text" class="field-input" placeholder="Address line 1" />
+        </p>
+        <p>
+          <input type="text" class="field-input" placeholder="Address line 2 / City / Postal code" />
+        </p>
+        <p>Email:
+          <input type="email" class="inline-input lg" placeholder="contact@client.com" />
+        </p>
+      </div>
+    </div>
+
+    <h2>15) Exhibits &amp; Schedules</h2>
+    <ul style="margin:.25rem 0 .2rem 1.1rem;">
+      <li>Exhibit A — SLA &amp; Support Schedule</li>
+      <li>Exhibit B — Security &amp; Compliance Annex (SOC2/ISO27001 summary; PenTest)</li>
+      <li>Exhibit C — Data Processing Agreement (GDPR)</li>
+      <li>Schedule 1 — Firmwide Seat Distribution Map (Client_Seat_Distribution_Map.xlsx)</li>
+      <li>Schedule 2 — Pricing &amp; Billing (Client_Billing_Schedule.pdf)</li>
+      <li>Schedule 3 — ROI &amp; Adoption (Client_ROI_Model.xlsx; Adoption_Performance_Report.pdf)</li>
+    </ul>
+
+    <h2>16) Acceptance &amp; Signatures</h2>
+    <div class="sign-grid">
+      <div class="sign-card">
+        <h3>Provider — Atlas Market Intelligence, Inc.</h3>
+        <div class="sig-line"></div>
+        <div class="sig-meta">
+          <strong>Name:</strong> Anthony Alexander &nbsp; | &nbsp;
+          <strong>Title:</strong> Chief Executive Officer
+        </div>
+        <div class="sig-meta">
+          <strong>Date:</strong>
+          <input type="date" class="inline-input sm" />
+        </div>
+        <div class="sig-line"></div>
+        <div class="sig-meta">
+          <strong>Name:</strong> Priya Shah &nbsp; | &nbsp;
+          <strong>Title:</strong> Compliance Manager
+        </div>
+        <div class="sig-meta">
+          <strong>Date:</strong>
+          <input type="date" class="inline-input sm" />
+        </div>
+      </div>
+      <div class="sign-card">
+        <h3>Client —</h3>
+        <div class="sig-line"></div>
+        <div class="sig-meta">
+          <strong>Name:</strong>
+          <input type="text" class="inline-input sm" placeholder="Signatory name" />
+          &nbsp; | &nbsp;
+          <strong>Title:</strong>
+          <input type="text" class="inline-input sm" placeholder="Title" />
+        </div>
+        <div class="sig-meta">
+          <strong>Date:</strong>
+          <input type="date" class="inline-input sm" />
+        </div>
+        <div class="sig-line"></div>
+        <div class="sig-meta">
+          <strong>Authorized Approver (Legal/Procurement):</strong>
+          <input type="text" class="inline-input sm" placeholder="Approver name" />
+          &nbsp; | &nbsp;
+          <strong>Title:</strong>
+          <input type="text" class="inline-input sm" placeholder="Title" />
+        </div>
+        <div class="sig-meta">
+          <strong>Date:</strong>
+          <input type="date" class="inline-input sm" />
+        </div>
+      </div>
+    </div>
+
+    <p class="muted" style="margin-top:12px">
+      By signing, the Parties agree to the Enterprise Agreement and incorporated documents. Totals exclude taxes.
+      This EA supersedes prior departmental order forms upon commencement, except for accrued rights and obligations.
+    </p>
+  </div>
+
+  <!-- ======================= -->
+  <!-- INTERACTION SCRIPT BLOCK -->
+  <!-- ======================= -->
+  <script>
+    // ==========================
+    // SKU DATABASE
+    // ==========================
+    const skuData = {
+      "ST-CORE-ENT": {
+        desc: "Core Seat \u2014 Enterprise Tier",
+        unit: "10080.00",
+        notes: "EA pricing band"
+      },
+      "ST-CORE-PRO": {
+        desc: "Core Seat \u2014 Professional Tier",
+        unit: "12600.00",
+        notes: "Pro tier workflow add-ons"
+      },
+      "ST-CORE-LITE": {
+        desc: "Core Seat \u2014 Analyst / Lite Tier",
+        unit: "4800.00",
+        notes: "Lite workflow suite"
+      },
+      "ST-DATA-TRADFI": {
+        desc: "TradFi Deep Feeds (Tenant)",
+        unit: "450000.00",
+        notes: "Research-grade FI/Index"
+      },
+      "ST-DATA-DEFI": {
+        desc: "DeFi Full Historical Pack",
+        unit: "220000.00",
+        notes: "DEX, on-chain, mempools"
+      },
+      "ST-COMPLY-PACK": {
+        desc: "Compliance & Audit Pack",
+        unit: "60000.00",
+        notes: "Evidence exports, audit automations"
+      },
+      "ST-SUPPORT-ENT": {
+        desc: "Enterprise Support (24\u00d77)",
+        unit: "80000.00",
+        notes: "TAM + expedited SLAs"
+      },
+      "CUSTOM": {
+        desc: "",
+        unit: "",
+        notes: ""
+      }
+    };
+
+    // ==========================
+    // GROUP DATABASE
+    // ==========================
+    const groupData = {
+      "TRADING_FIRM": {
+        scopes: "Core + DeFi lenses",
+        notes: "Daily dashboards, exports"
+      },
+      "TRADING_FX": {
+        scopes: "FX spot, forwards, swaps, options",
+        notes: "FX blotter, RFQ visualization"
+      },
+      "TRADING_EQUITIES": {
+        scopes: "Equity markets + corporate actions",
+        notes: "Equity ladders, screenings"
+      },
+      "TRADING_FIXED_INCOME": {
+        scopes: "Rates, credit, curves",
+        notes: "FI ladders, curve monitors"
+      },
+      "TRADING_CRYPTO": {
+        scopes: "Spot + derivatives + on-chain lenses",
+        notes: "DEX routing, CEX depth, on-chain flows"
+      },
+      "RESEARCH_FIRM": {
+        scopes: "Core + TradFi feeds",
+        notes: "Notebooks & screeners"
+      },
+      "RESEARCH_MACRO": {
+        scopes: "Macro data, FX, rates, commodities",
+        notes: "Macro dashboards, scenario explorer"
+      },
+      "RESEARCH_EQUITIES": {
+        scopes: "Fundamental + factor data",
+        notes: "Equity screeners, model exports"
+      },
+      "RESEARCH_CRYPTO": {
+        scopes: "Token, protocol, on-chain metrics",
+        notes: "Token metrics, ecosystem dashboards"
+      },
+      "RISK_COMPLIANCE": {
+        scopes: "Compliance pack",
+        notes: "Audit & evidence exports"
+      },
+      "RISK_MARKET": {
+        scopes: "VaR, stress, scenario analytics",
+        notes: "Market risk dashboards"
+      },
+      "RISK_CREDIT": {
+        scopes: "Issuer, counterparty, exposure",
+        notes: "Credit surveillance & watchlists"
+      },
+      "AML_COMPLIANCE": {
+        scopes: "AML/CTF & address risk tools",
+        notes: "Wallet risk, sanctions screening"
+      },
+      "REGULATORY_REPORTING": {
+        scopes: "Reporting data extracts & logs",
+        notes: "Reg templates & exports"
+      },
+      "OPS_SETTLEMENTS": {
+        scopes: "Post-trade ops views",
+        notes: "Break resolution, workflow views"
+      },
+      "OPS_MIDDLE_OFFICE": {
+        scopes: "Position, P&L, reconciliations",
+        notes: "Intraday monitoring"
+      },
+      "FINANCE_TEAM": {
+        scopes: "Billing, invoices, usage analytics",
+        notes: "Finance & reconciliation reports"
+      },
+      "ACCOUNTING_TEAM": {
+        scopes: "GL-aligned reporting exports",
+        notes: "Period-end data packs"
+      },
+      "EXEC_TEAM": {
+        scopes: "Executive dashboards & KPIs",
+        notes: "Read-only oversight views"
+      },
+      "PORTFOLIO_MANAGERS": {
+        scopes: "Portfolio views + risk overlays",
+        notes: "Allocation & performance lenses"
+      },
+      "DIRECTORS": {
+        scopes: "High-level performance + risk",
+        notes: "Board-level summary dashboards"
+      },
+      "DATA_ENGINEERING": {
+        scopes: "Data pipeline & API access",
+        notes: "Schema docs, sandbox access"
+      },
+      "QUANT_DESK": {
+        scopes: "Low-latency feeds + analytics",
+        notes: "Quant notebooks & model inputs"
+      },
+      "TECH_SECURITY": {
+        scopes: "Security logs & SIEM exports",
+        notes: "Security posture & events"
+      },
+      "OTHER_DESKS": {
+        scopes: "Core",
+        notes: "Finance, Ops, Exec"
+      },
+      "CUSTOM_GROUP": {
+        scopes: "",
+        notes: ""
+      }
+    };
+
+    // ==========================
+    // PROFESSIONAL SERVICES DATABASE
+    // ==========================
+    const psSkuData = {
+      "ST-PS-ENABLE-ADV": {
+        service: "Advanced Enablement (4 sessions)",
+        rateType: "fixed",
+        rateAmount: "12000.00",
+        notes: "Trading + Research labs"
+      },
+      "ST-PS-ENABLE-CORE": {
+        service: "Core Enablement (2 sessions)",
+        rateType: "fixed",
+        rateAmount: "6000.00",
+        notes: "Baseline rollout enablement"
+      },
+      "ST-PS-SOW": {
+        service: "Custom Integrations (per SOW)",
+        rateType: "hourly",
+        rateAmount: "250.00",
+        notes: "Change control required"
+      },
+      "ST-PS-TRAINING": {
+        service: "Onsite Training Day",
+        rateType: "daily",
+        rateAmount: "7500.00",
+        notes: "Up to 20 attendees per day"
+      },
+      "CUSTOM": {
+        service: "",
+        rateType: "fixed",
+        rateAmount: "",
+        notes: ""
+      }
+    };
+
+    // ==========================
+    // HELPERS
+    // ==========================
+    function parseDiscount(str) {
+      if (!str) return 0;
+      const m = String(str).match(/-?\d+(\.\d+)?/);
+      if (!m) return 0;
+      const val = parseFloat(m[0]);
+      if (isNaN(val)) return 0;
+      return Math.abs(val) / 100; // "-15%" -> 0.15
+    }
+
+    function recalcRow(row) {
+      const qtyInput   = row.querySelector('.qty-input');
+      const unitInput  = row.querySelector('.sku-unit');
+      const discInput  = row.querySelector('.disc-input');
+      const annualInput= row.querySelector('.annual-input');
+
+      if (!qtyInput || !unitInput || !discInput || !annualInput) return;
+
+      const qty   = parseFloat(qtyInput.value)  || 0;
+      const unit  = parseFloat(unitInput.value) || 0;
+      const discP = parseDiscount(discInput.value);
+
+      const annual = qty * unit * (1 - discP);
+      annualInput.value = annual.toFixed(2);
+    }
+
+    function recalcTotal() {
+      const rows = document.querySelectorAll('#sku-body .sku-row');
+      let total = 0;
+      rows.forEach(row => {
+        const annualInput = row.querySelector('.annual-input');
+        if (!annualInput) return;
+        const val = parseFloat(annualInput.value);
+        if (!isNaN(val)) total += val;
+      });
+      const totalInput = document.getElementById('sku-total');
+      if (totalInput) totalInput.value = total.toFixed(2);
+    }
+
+    function updateSKU(row) {
+      const select = row.querySelector('.sku-select');
+      if (!select) return;
+      const sku = select.value;
+      const desc = row.querySelector('.sku-desc');
+      const unit = row.querySelector('.sku-unit');
+      const notes = row.querySelector('.sku-notes');
+
+      if (skuData[sku]) {
+        desc.value  = skuData[sku].desc;
+        unit.value  = skuData[sku].unit;
+        notes.value = skuData[sku].notes;
+      }
+      recalcRow(row);
+      recalcTotal();
+    }
+
+    function updateGroup(row) {
+      const select = row.querySelector('.group-select');
+      if (!select) return;
+      const key = select.value;
+      const scopeInput = row.querySelector('.scope-input');
+      const notesInput = row.querySelector('.group-notes');
+
+      if (groupData[key]) {
+        scopeInput.value = groupData[key].scopes || "";
+        notesInput.value = groupData[key].notes  || "";
+      } else if (key === 'CUSTOM_GROUP') {
+        scopeInput.value = scopeInput.value || "";
+        notesInput.value = notesInput.value || "";
+      }
+    }
+
+    function updatePsRow(row) {
+      const select = row.querySelector('.ps-sku-select');
+      if (!select) return;
+      const sku = select.value;
+      const svcInput   = row.querySelector('.ps-service');
+      const rateTypeEl = row.querySelector('.ps-rate-type');
+      const rateAmtEl  = row.querySelector('.ps-rate-amount');
+      const notesEl    = row.querySelector('.ps-notes');
+
+      if (psSkuData[sku]) {
+        if (psSkuData[sku].service)   svcInput.value   = psSkuData[sku].service;
+        if (psSkuData[sku].rateType)  rateTypeEl.value = psSkuData[sku].rateType;
+        if (psSkuData[sku].rateAmount)rateAmtEl.value  = psSkuData[sku].rateAmount;
+        if (psSkuData[sku].notes)     notesEl.value    = psSkuData[sku].notes;
+      }
+    }
+
+    function addSkuRow() {
+      const body = document.getElementById('sku-body');
+      const firstRow = body.querySelector('.sku-row');
+      if (!firstRow) return;
+      const clone = firstRow.cloneNode(true);
+
+      const skuSelect  = clone.querySelector('.sku-select');
+      const desc       = clone.querySelector('.sku-desc');
+      const qtyInput   = clone.querySelector('.qty-input');
+      const unitInput  = clone.querySelector('.sku-unit');
+      const discInput  = clone.querySelector('.disc-input');
+      const annualInput= clone.querySelector('.annual-input');
+      const notes      = clone.querySelector('.sku-notes');
+
+      if (skuSelect)  skuSelect.value = 'CUSTOM';
+      if (desc)       desc.value = '';
+      if (qtyInput)   qtyInput.value = 0;
+      if (unitInput)  unitInput.value = '';
+      if (discInput)  discInput.value = '0%';
+      if (annualInput)annualInput.value = '0.00';
+      if (notes)      notes.value = '';
+
+      body.appendChild(clone);
+    }
+
+    function addGroupRow() {
+      const body = document.getElementById('group-body');
+      const firstRow = body.querySelector('.group-row');
+      if (!firstRow) return;
+      const clone = firstRow.cloneNode(true);
+
+      const select     = clone.querySelector('.group-select');
+      const seatsInput = clone.querySelector('.seats-input');
+      const scopeInput = clone.querySelector('.scope-input');
+      const notesInput = clone.querySelector('.group-notes');
+
+      if (select)     select.value = 'CUSTOM_GROUP';
+      if (seatsInput) seatsInput.value = 0;
+      if (scopeInput) scopeInput.value = '';
+      if (notesInput) notesInput.value = '';
+
+      body.appendChild(clone);
+    }
+
+    function addPsRow() {
+      const body = document.getElementById('ps-body');
+      const firstRow = body.querySelector('.ps-row');
+      if (!firstRow) return;
+      const clone = firstRow.cloneNode(true);
+
+      const svcInput   = clone.querySelector('.ps-service');
+      const skuSelect  = clone.querySelector('.ps-sku-select');
+      const rateTypeEl = clone.querySelector('.ps-rate-type');
+      const rateAmtEl  = clone.querySelector('.ps-rate-amount');
+      const notesEl    = clone.querySelector('.ps-notes');
+
+      if (skuSelect)  skuSelect.value = 'CUSTOM';
+      if (svcInput)   svcInput.value  = '';
+      if (rateTypeEl) rateTypeEl.value= 'fixed';
+      if (rateAmtEl)  rateAmtEl.value = '';
+      if (notesEl)    notesEl.value   = '';
+
+      body.appendChild(clone);
+    }
+
+    // ==========================
+    // EVENT WIRING
+    // ==========================
+    document.addEventListener('DOMContentLoaded', function() {
+      const skuBody     = document.getElementById('sku-body');
+      const addSkuBtn   = document.getElementById('add-sku-row');
+      const addGroupBtn = document.getElementById('add-group-row');
+      const groupBody   = document.getElementById('group-body');
+      const addPsBtn    = document.getElementById('add-ps-row');
+      const psBody      = document.getElementById('ps-body');
+
+      if (addSkuBtn) {
+        addSkuBtn.addEventListener('click', function() {
+          addSkuRow();
+        });
+      }
+
+      if (skuBody) {
+        skuBody.addEventListener('change', function(e) {
+          const row = e.target.closest('.sku-row');
+          if (!row) return;
+          if (e.target.classList.contains('sku-select')) {
+            updateSKU(row);
+          } else {
+            recalcRow(row);
+            recalcTotal();
+          }
+        });
+        skuBody.addEventListener('input', function(e) {
+          const row = e.target.closest('.sku-row');
+          if (!row) return;
+          if (e.target.classList.contains('sku-select')) {
+            updateSKU(row);
+          } else {
+            recalcRow(row);
+            recalcTotal();
+          }
+        });
+
+        document.querySelectorAll('#sku-body .sku-row').forEach(row => {
+          recalcRow(row);
+        });
+        recalcTotal();
+      }
+
+      if (addGroupBtn) {
+        addGroupBtn.addEventListener('click', function() {
+          addGroupRow();
+        });
+      }
+
+      if (groupBody) {
+        groupBody.addEventListener('change', function(e) {
+          const row = e.target.closest('.group-row');
+          if (!row) return;
+          if (e.target.classList.contains('group-select')) {
+            updateGroup(row);
+          }
+        });
+
+        document.querySelectorAll('#group-body .group-row').forEach(row => {
+          const select = row.querySelector('.group-select');
+          if (select) updateGroup(row);
+        });
+      }
+
+      if (addPsBtn) {
+        addPsBtn.addEventListener('click', function() {
+          addPsRow();
+        });
+      }
+
+      if (psBody) {
+        psBody.addEventListener('change', function(e) {
+          const row = e.target.closest('.ps-row');
+          if (!row) return;
+          if (e.target.classList.contains('ps-sku-select')) {
+            updatePsRow(row);
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
